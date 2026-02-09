@@ -1,0 +1,15 @@
+FROM postgres:15
+
+RUN apt-get update && apt-get install -y cron && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+COPY backup.sh /backup.sh
+RUN chmod +x /backup.sh
+
+COPY crontab /etc/cron.d/db-backup
+RUN chmod 0644 /etc/cron.d/db-backup
+
+RUN touch /var/log/cron.log
+
+CMD ["cron", "-f"]
