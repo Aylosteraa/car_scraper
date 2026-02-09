@@ -42,7 +42,7 @@ def parse_car_page(html: bytes) -> dict:
         if digits.startswith("0"):
             digits = "38" + digits
 
-        return digits
+        return int(digits)
 
     title = text("h1")
 
