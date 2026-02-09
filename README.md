@@ -52,20 +52,14 @@
 
 Запуск програми
 
-1. Створи файл `.env` у корені проєкту на основі прикладу:
-
-```
-DATABASE_URL=postgresql+asyncpg://postgres:postgres@db:5432/auto_db
-```
-
-2. Перевірити, що Docker встановлено на ПК 
+1. Перевірити, що Docker встановлено на ПК 
 
 ```
 docker --version
 docker compose version
 ```
 
-3. Запустити проєкт 
+2. Запустити проєкт 
 
 ```
 docker compose up --build
